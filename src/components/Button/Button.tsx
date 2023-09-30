@@ -1,13 +1,12 @@
 import React from "react";
+import { Button as ElButton } from "@spectral-labs/elements-react";
 
 interface ButtonProps {
   label: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ label = "Button" }) => (
-  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-    {label}
-  </button>
+  <ElButton label={label} />
 );
 
 export default Button;
