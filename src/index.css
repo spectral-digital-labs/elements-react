@@ -1,0 +1,9 @@
+/* 
+If seeing errors:
+
+1. Press Command-Shift-P and search for “change language mode”
+2. Inside the search bar, type “tailwindcss” and select it.
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
