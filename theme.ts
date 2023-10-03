@@ -1,6 +1,6 @@
 import chroma from "chroma-js";
 
-const shadeRange = [
+export const shadeRange = [
   50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950,
 ] as const;
 
@@ -29,7 +29,15 @@ const generateShades = (baseColor: HexColor): ColorShadeMapping => {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-type SemanticKey = "primary" | "secondary" | "background" | "info" | "dark";
+export const semanticColorKeys = [
+  "primary",
+  "secondary",
+  "background",
+  "info",
+  "dark",
+] as const;
+
+type SemanticKey = (typeof semanticColorKeys)[number];
 
 function createSemanticColors(semanticPalette: Record<SemanticKey, HexColor>) {
   const semanticColors = {} as Record<SemanticKey, ColorShadeMapping>;

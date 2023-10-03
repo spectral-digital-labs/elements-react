@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes } from "react";
 import classnames from "classnames";
 import { twMerge } from "tailwind-merge";
+import { semanticColorKeys, shadeRange } from "../../../theme";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   // colorScheme: string;
@@ -62,18 +63,15 @@ const Button = ({ ...props }: ButtonProps) => {
       </button>
 
       <div className="grid grid-cols-11">
-        {["primary", "secondary", "background", "info", "dark"].map((color) =>
-          [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map(
-            (shade) => (
-              <button
-                key={color + shade}
-                // @TODO: twMerge isn't doing what I hoped it would. Explore but probably remove.
-                className={twMerge(`bg-${color}-${shade}`)}
-              >
-                {shade}
-              </button>
-            )
-          )
+        {semanticColorKeys.map((color) =>
+          shadeRange.map((shade) => (
+            <button
+              key={color + shade}
+              className={twMerge(`bg-${color}-${shade}`)}
+            >
+              {shade}
+            </button>
+          ))
         )}
       </div>
     </>
