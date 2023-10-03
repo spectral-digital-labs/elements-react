@@ -1,6 +1,5 @@
-import React, { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from "react";
 import classnames from "classnames";
-import { twMerge } from "tailwind-merge";
 import { semanticColorKeys, shadeRange } from "../../../theme";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -65,10 +64,7 @@ const Button = ({ ...props }: ButtonProps) => {
       <div className="grid grid-cols-11">
         {semanticColorKeys.map((color) =>
           shadeRange.map((shade) => (
-            <button
-              key={color + shade}
-              className={twMerge(`bg-${color}-${shade}`)}
-            >
+            <button key={color + shade} className={`bg-${color}-${shade}`}>
               {shade}
             </button>
           ))
