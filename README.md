@@ -30,6 +30,8 @@ If you are developing a production application, we recommend updating the config
 
 Install Tailwind CSS Intellisense Plugin
 
+Confirm that `color-comment.ts` still has desired affect in production.
+
 ### To update npm package:
 
 - Iterate package.json version number using [Semver standards](https://devhints.io/semver)
